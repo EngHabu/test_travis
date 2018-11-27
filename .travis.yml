@@ -1,0 +1,13 @@
+sudo: required
+language: go
+go:
+- "1.10"
+services:
+- docker
+deploy:
+  provider: releases
+  script:
+    echo "Tag:$TRAVIS_TAG-Commit:$TRAVIS_COMMIT"
+  on:
+    branch: master
+    tags: true
